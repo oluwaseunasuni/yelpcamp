@@ -25,7 +25,10 @@ app.post("/campgrounds", function(req, res){
 	//redirect back to campgrounds page
 })
 
-
+//shows form that would send data to the campground post route
+app.get("/campgrounds/new", function(req, res){
+	res.render("new.ejs");
+});
 
 app.listen(process.env.PORT || 3000, process.env.IP, function(){
 	console.log("The YelpCamp Server has statred");
