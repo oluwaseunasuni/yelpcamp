@@ -1,7 +1,8 @@
 var express = require("express");
 var app = express();
+var bodyParser = require("body-parser");
 
-
+app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
 app.get("/", function(req, res){
@@ -19,6 +20,14 @@ app.get("/campgrounds", function(req, res){
 	
 });
 
+app.post("/campgrounds", function(req, res){
+	//get data from form and add to campgrounds array
+	//redirect back to campgrounds page
+})
+
+
+
 app.listen(process.env.PORT || 3000, process.env.IP, function(){
 	console.log("The YelpCamp Server has statred");
 });
+
