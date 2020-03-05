@@ -19,6 +19,8 @@ app.get("/campgrounds", function(req, res){
 	res.render("campgrounds", {campgrounds:campgrounds});	
 });
 
+
+//Makes new campround
 app.post("/campgrounds", function(req, res){
 	//get data from form and add to campgrounds array
 	var name = req.body.name;
