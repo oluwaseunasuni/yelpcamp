@@ -19,6 +19,7 @@ app.get("/", function(req, res){
 	res.render("landing");
 });
 
+//INDEX - show all campgrounds
 app.get("/campgrounds", function(req, res){
 	//Get all campgrounds from the DB
 	Campground.find({}, function(err, allCampgrounds){
@@ -106,7 +107,7 @@ var Campground = mongoose.model("Campground", campgroundSchema);
 // 		}
 // 	});
 
-//collects data via the forms
+//CREATE - collects data via the forms, add new campground to DB
 app.post("/campgrounds", function(req, res){
 	var name = req.body.name;
 	var image = req.body.image;
@@ -122,7 +123,7 @@ app.post("/campgrounds", function(req, res){
 	});	
 });
 
-//shows form that would send data to the campground post route
+//NEW - shows form that would send data to the new campground post route
 app.get("/campgrounds/new", function(req, res){
 	res.render("new.ejs");
 });
